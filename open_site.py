@@ -1,24 +1,30 @@
 import webbrowser
 import sys
+from CLI_webscrapper import getSoup
 
 # import pyperclip
 
 
-def opening_browser(address):
+def opening_browser(dict_row, arg_list):
+    search_term = " ".join(arg_list[1:])
+    address = dict_row + search_term
     webbrowser.open(address, new=2)
+
+    getSoup(address)
 
 
 def choose_site(arg_list):
     # Need to search a dictionary for the site title
     site_dict = {
         "nature": "https://www.nature.com/search?q=",
-        "ACSPub": "https://pubs.acs.org/action/doSearch?AllField=",
+        "acspub": "https://pubs.acs.org/action/doSearch?AllField=",
     }
 
-    if arg_list[0].lower() in site_dict:
-        search_term = " ".join(arg_list[1:])
-        address = site_dict["nature"] + search_term
-        opening_browser(address)
+    if arg_list[0].lower() == "nature":
+        opening_browser(site_dict["nature"], arg_list)
+
+    if arg_list[0].lower() == "acspub":
+        opening_browser(site_dict["acspub"], arg_list)
 
 
 def open_site(arg_list):
