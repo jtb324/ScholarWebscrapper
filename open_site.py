@@ -2,6 +2,7 @@ import webbrowser
 import sys
 from CLI_webscrapper import getSoup
 from Cell_webscrapper import getSoupCell
+from ACS_webscrapper import getSoupACS
 
 # import pyperclip
 
@@ -38,7 +39,7 @@ def choose_site(arg_list):
 
     if arg_list[0].lower() == "acspub":
         address = opening_browser(site_dict["acspub"], arg_list)
-        # TODO: need to make a function to get the soup for the acspub site
+        getSoupACS(address)
 
     if arg_list[0].lower() == "cell-ajhg":
         address = opening_browser_mod(site_dict["cell-ajhg"], arg_list)

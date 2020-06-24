@@ -14,6 +14,8 @@ The goal of this project was to create a CLI where you can search different acad
 
 * **Cell_webscrapper.py**: This file does the same as the open_site.py file. It takes the address of the site and finds the article title, the authors, the journal published in, and the date published and prints it to a text file. There is a weird that that happens where it prints more than the title such as the saying "cited in scropus" and then it adds volume numbers to the journal for some entry.
 
+* **ACS_webscrapper.py**: This file does the same as the Cell_webscrapper.py except it works for the ACS publishing site instead of cell.
+
 ## In Progress:
 
 - Still would like to be able to extract more information about the publications such as authors.
