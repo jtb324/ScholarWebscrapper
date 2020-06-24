@@ -5,24 +5,25 @@ from Cell_webscrapper import getSoupCell
 from ACS_webscrapper import getSoupACS
 
 # import pyperclip
+def open_browser(address):
+    """This function opens the browser if a specifc argument is selected"""
+    webbrowser.open(address, new=2)
 
 
-def opening_browser(dict_row, arg_list):
+def make_address(dict_row, arg_list):
     search_term = " ".join(arg_list[1:])
     address = dict_row + search_term
-    webbrowser.open(address, new=2)
     return address
 
 
-def opening_browser_mod(dict_row, arg_list):
-    """This function is used to add extra info to the search term so that it will seaarch the cell site"""
+def make_address_mod(dict_row, arg_list):
+    """This function is used to add extra info to the search term so that it will seaarch the Cell site"""
     search_term = " ".join(arg_list[1:])
     address = dict_row[0] + search_term + dict_row[1]
-    webbrowser.open(address, new=2)
     return address
 
 
-def choose_site(arg_list):
+def choose_site(arg_list, openBrowser):
     # Need to search a dictionary for the site title
     site_dict = {
         "nature": "https://www.nature.com/search?q=",
@@ -34,19 +35,25 @@ def choose_site(arg_list):
     }
 
     if arg_list[0].lower() == "nature":
-        address = opening_browser(site_dict["nature"], arg_list)
+        address = make_address(site_dict["nature"], arg_list)
         getSoup(address)
+        if openBrowser == True:
+            open_browser(address)
 
     if arg_list[0].lower() == "acspub":
-        address = opening_browser(site_dict["acspub"], arg_list)
+        address = make_address(site_dict["acspub"], arg_list)
         getSoupACS(address)
+        if openBrowser == True:
+            open_browser(address)
 
     if arg_list[0].lower() == "cell-ajhg":
-        address = opening_browser_mod(site_dict["cell-ajhg"], arg_list)
+        address = make_address_mod(site_dict["cell-ajhg"], arg_list)
         getSoupCell(address)
+        if openBrowser == True:
+            open_browser(address)
 
 
-def open_site(arg_list):
+def open_site(arg_list, openBrowser):
 
-    choose_site(arg_list)
+    choose_site(arg_list, openBrowser)
 

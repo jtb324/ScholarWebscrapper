@@ -5,7 +5,7 @@ from open_site import open_site
 
 
 def run(args):
-    open_site(args.input)
+    open_site(args.input, args.openBrowser)
 
 
 def main():
@@ -20,6 +20,15 @@ def main():
         dest="input",
         type=str,
         required=True,
+    )
+
+    parser.add_argument(
+        "--openBrowser",
+        help="This argument excepts True or False and if True will open the web page",
+        dest="openBrowser",
+        type=bool,
+        required=False,
+        default=False,
     )
 
     parser.set_defaults(func=run)

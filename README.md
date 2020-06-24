@@ -2,7 +2,7 @@
 
 ## Goal:
 
-The goal of this project was to create a CLI where you can search different academic journals for keywords to find articles of interest.
+The goal of this project was to create a CLI where you can search different academic journals for keywords to find articles of interest. It currently can search Nature, Cell, and ACS Publishing
 
 ## Files:
 
@@ -18,8 +18,4 @@ The goal of this project was to create a CLI where you can search different acad
 
 ## In Progress:
 
-- Still would like to be able to extract more information about the publications such as authors.
-
-* also need to write it so that you can either visit the page or you could get the list generated, not both.
-
-* need to create a file to go through the acspub site.
+- also need to write it so that you can either visit the page or you could get the list generated, not both.
