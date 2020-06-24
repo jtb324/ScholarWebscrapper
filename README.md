@@ -8,12 +8,16 @@ The goal of this project was to create a CLI where you can search different acad
 
 - **CLI_webscapper.py**: This file uses beautifulsoup and requests modules to fetch the desired webpage and then to collect it as a soup. It can then pull the article title, the date published, and the journal published in from that soup and write it to a text file to be used to find the most interesting articles.
 
-- **open_site.py**: This file contains the functions used to actually open a site in a new tab in a browser. The user can search either the nature journal or the ACS Publishing for articles of interest. The user provides the name of the journal as either nature or ACSPub and then the keywords that they want to look for. A new browser tab is then opened.
+- **open_site.py**: This file contains the functions used to actually open a site in a new tab in a browser. The user can search either the nature journal for for articles of interest. The user provides the name of the journal as either nature or ACSPub and then the keywords that they want to look for. A new browser tab is then opened.
 
 - **Webscrap_Interface.py**: This file sets up the CLI for the project using argparse module. It only accepts an input argument at the moment. It runs the open_site function from the open_site.py file.
+
+* **Cell_webscrapper.py**: This file does the same as the open_site.py file. It takes the address of the site and finds the article title, the authors, the journal published in, and the date published and prints it to a text file. There is a weird that that happens where it prints more than the title such as the saying "cited in scropus" and then it adds volume numbers to the journal for some entry.
 
 ## In Progress:
 
 - Still would like to be able to extract more information about the publications such as authors.
 
 * also need to write it so that you can either visit the page or you could get the list generated, not both.
+
+* need to create a file to go through the acspub site.
