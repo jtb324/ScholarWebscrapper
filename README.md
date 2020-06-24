@@ -6,7 +6,7 @@ The goal of this project was to create a CLI where you can search different acad
 
 ## Files:
 
-- **CLI_webscapper.py**: This file uses beautifulsoup and requests modules to fetch the desired webpage and then to collect it as a soup
+- **CLI_webscapper.py**: This file uses beautifulsoup and requests modules to fetch the desired webpage and then to collect it as a soup. It can then pull the article title, the date published, and the journal published in from that soup and write it to a text file to be used to find the most interesting articles.
 
 - **open_site.py**: This file contains the functions used to actually open a site in a new tab in a browser. The user can search either the nature journal or the ACS Publishing for articles of interest. The user provides the name of the journal as either nature or ACSPub and then the keywords that they want to look for. A new browser tab is then opened.
 
@@ -14,4 +14,6 @@ The goal of this project was to create a CLI where you can search different acad
 
 ## In Progress:
 
-- Still would like to be able to extract information about the publications
+- Still would like to be able to extract more information about the publications such as authors.
+
+* also need to write it so that you can either visit the page or you could get the list generated, not both.
