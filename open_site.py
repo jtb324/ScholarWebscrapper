@@ -3,6 +3,7 @@ import sys
 from CLI_webscrapper import getSoup
 from Cell_webscrapper import getSoupCell
 from ACS_webscrapper import getSoupACS
+from Med_Genetics_webscrapper import getSoupMedGenetics
 
 # import pyperclip
 def open_browser(address):
@@ -32,6 +33,7 @@ def choose_site(arg_list, openBrowser):
             "https://www.cell.com/action/doSearch?searchType=quick&searchText=",
             "&searchScope=fullSite&journalCode=ajhg&seriesISSNFltraddfilter=0002-9297&occurrences=all&code=cell-site&journalCode=ajhg",
         ],
+        "medical_genetics": "https://jmg.bmj.com/search/",
     }
 
     if arg_list[0].lower() == "nature":
@@ -49,6 +51,12 @@ def choose_site(arg_list, openBrowser):
     if arg_list[0].lower() == "cell-ajhg":
         address = make_address_mod(site_dict["cell-ajhg"], arg_list)
         getSoupCell(address)
+        if openBrowser == True:
+            open_browser(address)
+
+    if arg_list[0].lower() == "medical_genetics":
+        address = make_address(site_dict["medical_genetics"], arg_list)
+        getSoupMedGenetics(address)
         if openBrowser == True:
             open_browser(address)
 
