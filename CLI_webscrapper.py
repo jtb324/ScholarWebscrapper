@@ -7,7 +7,6 @@ from bs4 import BeautifulSoup
 import requests
 import os
 import pandas as pd
-import numpy as np
 
 ##################################################################################
 def text_write(path, filename, df):
